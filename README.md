@@ -2,7 +2,42 @@
 
 Static, self-contained landing page for Helvex — RFQ swaps on Canton Network.
 
-The entire site lives in a single file: [`index.html`](./index.html) (all CSS/JS inline; only external dependency is Google Fonts over HTTPS).
+The entire site lives in a single file: [`index.html`](./index.html) (all CSS/JS inline; only external dependency is Google Fonts over HTTPS). Logo assets live in [`assets/`](./assets/).
+
+**Live links on the page**
+- App: https://app.helvex.cc
+- Docs: https://helvex.gitbook.io/helvex-docs
+- X: https://x.com/Helvexcc
+
+## Analytics (deferred)
+
+Do not ship empty tracking tags. When you have IDs, paste these into `<head>` of [`index.html`](./index.html) (replace the placeholders):
+
+**GA4** — Measurement ID `G-XXXXXXXX`:
+
+```html
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXX');
+</script>
+```
+
+**Meta Pixel** — numeric Pixel ID:
+
+```html
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'YOUR_PIXEL_ID');
+  fbq('track', 'PageView');
+</script>
+```
 
 ## Deployment (Vercel)
 

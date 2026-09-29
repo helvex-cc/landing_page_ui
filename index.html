@@ -3,7 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Helvex | RFQ swaps on Canton Network. Launching soon.</title>
+<title>Helvex | Private RFQ swaps on Canton Network</title>
+<meta name="description" content="Private RFQ swaps on Canton Network. Firm, executable quotes. No mempool. No MEV. No slippage.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,700..900;112.5,700..900&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -71,6 +75,17 @@ nav{
   letter-spacing:.02em;font-stretch:112.5%;
 }
 .wordmark span{color:var(--accent)}
+.logo{
+  display:inline-flex;align-items:center;height:28px;
+}
+.logo img{
+  height:28px;width:auto;display:block;
+}
+.logo .for-light{display:none}
+.logo .for-dark{display:block}
+[data-theme="light"] .logo .for-dark{display:none}
+[data-theme="light"] .logo .for-light{display:block}
+.logo.logo-sm img{height:22px}
 .nav-links{display:flex;gap:8px;flex:1}
 .nav-links a{
   font-size:.8125rem;font-weight:500;color:var(--text-secondary);
@@ -110,22 +125,25 @@ h1{
 }
 h1 em{font-style:normal;color:var(--accent)}
 .hero-sub{font-size:1.0625rem;color:var(--text-secondary);max-width:46ch;margin-bottom:32px}
-.hero-ctas{display:flex;gap:12px;margin-bottom:40px}
-.launch-badge{
-  display:inline-flex;align-items:center;gap:10px;margin-bottom:40px;
-  padding:10px 18px;border-radius:999px;
-  background:var(--accent-wash);border:1px solid var(--border-strong);
-  font-family:var(--font-data);font-size:.8125rem;color:var(--text-primary);
-}
-.pulse{
-  width:8px;height:8px;border-radius:50%;background:var(--accent);position:relative;flex:none;
-}
-.pulse::after{
-  content:"";position:absolute;inset:0;border-radius:50%;background:var(--accent);
-  animation:pulse 2s var(--ease) infinite;
-}
-@keyframes pulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(3);opacity:0}}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px}
 .hero-facts{display:flex;gap:0;border-top:1px solid var(--border-subtle)}
+.nav-right .btn{height:32px;padding:0 14px;font-size:.8125rem}
+.social-x{
+  width:32px;height:32px;border-radius:var(--radius-sm);
+  border:1px solid var(--border-strong);color:var(--text-secondary);
+  display:grid;place-items:center;transition:all .12s var(--ease);
+}
+.social-x:hover{background:var(--bg-hover);color:var(--text-primary)}
+.social-x svg{display:block}
+.ticket-app-link{
+  display:block;max-width:400px;margin:16px 0 0 auto;text-align:center;
+  font-family:var(--font-data);font-size:.6875rem;color:var(--accent);
+}
+.ticket-app-link:hover{text-decoration:underline}
+.preview-label{
+  max-width:400px;margin:8px 0 0 auto;text-align:center;
+  font-family:var(--font-data);font-size:.6875rem;color:var(--text-muted);
+}
 .fact{padding:16px 24px 0 0;margin-right:24px;border-right:1px solid var(--border-subtle);padding-right:24px}
 .fact:last-child{border-right:none}
 .fact .mono{font-size:1.0625rem;font-weight:500;display:block}
@@ -208,17 +226,18 @@ h2{
   border-top:1px solid var(--border-subtle);
   text-align:center;padding:96px 24px;
 }
-.cta h2{margin:14px auto 12px}
-.cta p{color:var(--text-secondary);margin-bottom:32px}
-.cta .btn{margin:0 6px}
+.cta h2{margin:14px auto 12px;max-width:28ch}
+.cta p{color:var(--text-secondary);margin-bottom:32px;max-width:42ch;margin-left:auto;margin-right:auto}
+.cta-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
 
 /* Footer */
 footer{border-top:1px solid var(--border-subtle);padding:32px 0;background:var(--bg-surface)}
 .foot-inner{max-width:1180px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 .foot-inner p{font-size:.75rem;color:var(--text-muted)}
-.foot-links{display:flex;gap:20px}
+.foot-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
 .foot-links a{font-size:.75rem;color:var(--text-secondary)}
 .foot-links a:hover{color:var(--text-primary)}
+.foot-links .social-x{width:28px;height:28px}
 
 /* ============ Motion ============ */
 @keyframes quote-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
@@ -229,7 +248,6 @@ footer{border-top:1px solid var(--border-subtle);padding:32px 0;background:var(-
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
-  .pulse::after{display:none}
 }
 
 /* ============ Responsive ============ */
@@ -241,11 +259,13 @@ footer{border-top:1px solid var(--border-subtle);padding:32px 0;background:var(-
 }
 @media (max-width:640px){
   .nav-links{display:none}
+  .net-status{display:none}
   .cards,.steps{grid-template-columns:1fr}
   .hero{padding:56px 0 48px}
   section{padding:56px 0}
   .hero-facts{flex-direction:column;gap:12px}
   .fact{border-right:none;margin:0;padding:12px 0 0}
+  .ticket-app-link,.preview-label{margin-left:0}
 }
 </style>
 </head>
@@ -253,13 +273,21 @@ footer{border-top:1px solid var(--border-subtle);padding:32px 0;background:var(-
 
 <nav>
   <div class="nav-inner">
-    <a href="#" class="wordmark">HELVE<span>X</span></a>
+    <a href="/" class="logo" aria-label="Helvex">
+      <img class="for-dark" src="assets/lockup-dark.svg" alt="Helvex" height="28" width="117">
+      <img class="for-light" src="assets/lockup-light.svg" alt="Helvex" height="28" width="117">
+    </a>
     <div class="nav-links">
       <a href="#why">Why RFQ</a>
       <a href="#how">How it works</a>
+      <a href="https://helvex.gitbook.io/helvex-docs" target="_blank" rel="noopener noreferrer">Docs</a>
     </div>
     <div class="nav-right">
-      <span class="net-status"><span class="dot" style="background:var(--warning)"></span>launching soon</span>
+      <span class="net-status"><span class="dot"></span>live on Canton</span>
+      <a class="social-x" href="https://x.com/Helvexcc" target="_blank" rel="noopener noreferrer" aria-label="Helvex on X">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.727-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+      </a>
+      <a class="btn btn-primary" href="https://app.helvex.cc">Open app</a>
       <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">◐</button>
     </div>
   </div>
@@ -268,12 +296,12 @@ footer{border-top:1px solid var(--border-subtle);padding:32px 0;background:var(-
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Launching soon on Canton Network</span>
+      <span class="eyebrow">Live on Canton Network</span>
       <h1>The quote comes <em>to you.</em></h1>
       <p class="hero-sub">Request a price. Competing market makers respond privately with firm, executable quotes. Accept one, settle atomically. No mempool, no MEV, no slippage.</p>
-      <div class="launch-badge">
-        <span class="pulse"></span>
-        <span>Launching soon on Canton mainnet</span>
+      <div class="hero-ctas">
+        <a class="btn btn-primary btn-lg" href="https://app.helvex.cc">Open app</a>
+        <a class="btn btn-secondary btn-lg" href="https://helvex.gitbook.io/helvex-docs" target="_blank" rel="noopener noreferrer">Read docs</a>
       </div>
       <div class="hero-facts">
         <div class="fact"><span class="mono">0 bps</span><small>Slippage on fills</small></div>
@@ -298,13 +326,14 @@ footer{border-top:1px solid var(--border-subtle);padding:32px 0;background:var(-
           <div class="trow"><span>Fee</span><span>2.5 bps</span></div>
           <div class="trow"><span>vs. reference</span><span class="spread-pos" id="spread">+1.8 bps</span></div>
         </div>
-        <button class="btn btn-primary" id="acceptBtn">Accept 1.08425</button>
+        <button class="btn btn-primary" id="acceptBtn" type="button">Accept 1.08425</button>
         <div class="ticket-mms">
           <span>3 makers quoting</span>
           <span class="ticket-expire" id="timer">expires 8s</span>
         </div>
       </div>
-      <p style="max-width:400px;margin:16px 0 0 auto;text-align:center;font-family:var(--font-data);font-size:.6875rem;color:var(--text-muted)">product preview</p>
+      <a class="ticket-app-link" href="https://app.helvex.cc">Try it in the app →</a>
+      <p class="preview-label">product preview</p>
     </div>
   </div>
 </header>
@@ -377,18 +406,28 @@ footer{border-top:1px solid var(--border-subtle);padding:32px 0;background:var(-
 </section>
 
 <div class="cta">
-  <span class="eyebrow">Launching soon</span>
+  <span class="eyebrow">Live now</span>
   <h2>Your next fill, without the audience.</h2>
-  <p>Helvex goes live on Canton mainnet soon. Check back to request your first quote.</p>
-  <div class="launch-badge" style="justify-content:center;margin:0 auto">
-    <span class="pulse"></span>
-    <span>Coming soon</span>
+  <p>Helvex is live on Canton. Request a quote, compare firm prices from makers, and settle atomically.</p>
+  <div class="cta-actions">
+    <a class="btn btn-primary btn-lg" href="https://app.helvex.cc">Open app</a>
+    <a class="btn btn-secondary btn-lg" href="https://helvex.gitbook.io/helvex-docs" target="_blank" rel="noopener noreferrer">Read docs</a>
   </div>
 </div>
 
 <footer>
   <div class="foot-inner">
-    <span class="wordmark" style="font-size:.9375rem">HELVE<span style="color:var(--accent)">X</span></span>
+    <a href="/" class="logo logo-sm" aria-label="Helvex">
+      <img class="for-dark" src="assets/lockup-dark.svg" alt="Helvex" height="22" width="92">
+      <img class="for-light" src="assets/lockup-light.svg" alt="Helvex" height="22" width="92">
+    </a>
+    <div class="foot-links">
+      <a href="https://app.helvex.cc">App</a>
+      <a href="https://helvex.gitbook.io/helvex-docs" target="_blank" rel="noopener noreferrer">Docs</a>
+      <a class="social-x" href="https://x.com/Helvexcc" target="_blank" rel="noopener noreferrer" aria-label="Helvex on X">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.727-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+      </a>
+    </div>
     <p>© 2026 Helvex · A Dream Capital product · Built on Canton Network</p>
   </div>
 </footer>
