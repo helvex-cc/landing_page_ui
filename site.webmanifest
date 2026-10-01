@@ -1,0 +1,64 @@
+{
+  "name": "Helvex — Private RFQ on Canton",
+  "short_name": "Helvex",
+  "description": "Permissioned RFQ desk on Canton Network. Swap CC, CBTC, and USDCx with firm quotes and atomic settlement.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#07090F",
+  "theme_color": "#3D5BF5",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["finance", "business"],
+  "icons": [
+    {
+      "src": "/assets/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icon-256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Open trading app",
+      "short_name": "App",
+      "description": "Open the Helvex MainNet trading desk",
+      "url": "https://app.helvex.cc",
+      "icons": [{ "src": "/assets/icon-256.png", "sizes": "256x256" }]
+    },
+    {
+      "name": "Docs",
+      "short_name": "Docs",
+      "description": "Helvex partner documentation",
+      "url": "https://helvex.gitbook.io/helvex-docs",
+      "icons": [{ "src": "/assets/icon-256.png", "sizes": "256x256" }]
+    }
+  },
+  "related_applications": [],
+  "prefer_related_applications": false
+}

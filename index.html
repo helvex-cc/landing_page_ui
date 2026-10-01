@@ -3,14 +3,232 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Helvex | Private RFQ swaps on Canton Network</title>
-<meta name="description" content="Permissioned RFQ desk on Canton. Swap CC, CBTC, and USDCx with firm quotes, KYC-verified counterparties, and atomic settlement. No mempool. No MEV. No slippage.">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
-<link rel="apple-touch-icon" href="assets/favicon-32.png">
+<title>Helvex — Canton Network RFQ Desk | Private CC, CBTC &amp; USDCx Swaps</title>
+<meta name="description" content="Helvex is the permissioned RFQ desk on Canton Network (a Dream Capital product). KYC-verified traders swap CC, CBTC, and USDCx with firm quotes and atomic DvP settlement via Loop wallet + Helvex trading ID. Live on MainNet.">
+<meta name="keywords" content="Helvex Canton, Helvex RFQ, Canton Network RFQ, private swaps Canton, atomic DvP, Canton Coin CC, CBTC, USDCx, Loop wallet, Dream Capital, institutional RFQ, no MEV">
+<meta name="author" content="Helvex (Canton Network)">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="theme-color" content="#07090F" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F8F9FC" media="(prefers-color-scheme: light)">
+<meta name="color-scheme" content="dark light">
+<meta name="application-name" content="Helvex">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Helvex">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://helvex.cc/">
+<link rel="alternate" hreflang="en" href="https://helvex.cc/">
+<link rel="alternate" hreflang="x-default" href="https://helvex.cc/">
+<link rel="llms-txt" href="https://helvex.cc/llms.txt">
+
+<!-- Icons / ASO -->
+<link rel="icon" href="https://helvex.cc/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="https://helvex.cc/assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="https://helvex.cc/assets/icon-256.png" type="image/png" sizes="256x256">
+<link rel="apple-touch-icon" href="https://helvex.cc/assets/apple-touch-icon.png" sizes="180x180">
+<link rel="apple-touch-icon" href="https://helvex.cc/assets/icon-256.png" sizes="256x256">
+<link rel="manifest" href="https://helvex.cc/site.webmanifest">
+<link rel="mask-icon" href="https://helvex.cc/assets/favicon.svg" color="#3D5BF5">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Helvex">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://helvex.cc/">
+<meta property="og:title" content="Helvex — Canton Network RFQ Desk | CC, CBTC &amp; USDCx">
+<meta property="og:description" content="Permissioned RFQ desk on Canton Network. KYC-verified traders. Firm quotes. Atomic DvP. Live on MainNet — not a public AMM.">
+<meta property="og:image" content="https://helvex.cc/assets/og-image.png">
+<meta property="og:image:secure_url" content="https://helvex.cc/assets/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Helvex — Private RFQ swaps on Canton Network">
+
+<!-- Twitter / X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@Helvexcc">
+<meta name="twitter:creator" content="@Helvexcc">
+<meta name="twitter:title" content="Helvex — Canton Network RFQ Desk | CC, CBTC &amp; USDCx">
+<meta name="twitter:description" content="Permissioned RFQ on Canton: swap CC, CBTC, USDCx with firm quotes and atomic DvP. KYC-gated. Live on MainNet.">
+<meta name="twitter:image" content="https://helvex.cc/assets/og-image.png">
+<meta name="twitter:image:alt" content="Helvex — Private RFQ swaps on Canton Network">
+
+<!-- Performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://app.helvex.cc">
+<link rel="dns-prefetch" href="https://helvex.gitbook.io">
+<link rel="dns-prefetch" href="https://x.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,700..900;112.5,700..900&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Structured data: Organization + WebSite + SoftwareApplication + FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://helvex.cc/#organization",
+      "name": "Helvex",
+      "alternateName": [
+        "Helvex Canton",
+        "Helvex RFQ",
+        "Helvex Canton Network"
+      ],
+      "legalName": "Helvex",
+      "slogan": "Private RFQ swaps on Canton Network",
+      "url": "https://helvex.cc/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://helvex.cc/assets/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://helvex.cc/assets/og-image.png",
+      "description": "Helvex is a permissioned RFQ trading desk on Canton Network (a Dream Capital product). Verified users swap CC, CBTC, and USDCx with firm quotes and atomic DvP settlement. Not affiliated with unrelated brands that share the Helvex name.",
+      "knowsAbout": [
+        "Canton Network",
+        "RFQ trading",
+        "atomic DvP settlement",
+        "Canton Coin",
+        "CBTC",
+        "USDCx",
+        "Loop wallet"
+      ],
+      "sameAs": [
+        "https://x.com/Helvexcc",
+        "https://helvex.gitbook.io/helvex-docs",
+        "https://app.helvex.cc"
+      ],
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Dream Capital"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://helvex.cc/#website",
+      "url": "https://helvex.cc/",
+      "name": "Helvex — Canton Network RFQ Desk",
+      "alternateName": "Helvex",
+      "description": "Marketing site for Helvex, the permissioned RFQ desk on Canton Network. Trading happens at app.helvex.cc.",
+      "publisher": { "@id": "https://helvex.cc/#organization" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://helvex.cc/#webpage",
+      "url": "https://helvex.cc/",
+      "name": "Helvex — Canton Network RFQ Desk | Private CC, CBTC & USDCx Swaps",
+      "isPartOf": { "@id": "https://helvex.cc/#website" },
+      "about": { "@id": "https://helvex.cc/#organization" },
+      "description": "Helvex is live on Canton MainNet: KYC-gated RFQ swaps of CC, CBTC, and USDCx with firm quotes and atomic settlement.",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://helvex.cc/assets/og-image.png",
+        "width": 1200,
+        "height": 630
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://helvex.cc/#app",
+      "name": "Helvex",
+      "alternateName": "Helvex Canton RFQ Desk",
+      "applicationCategory": "FinanceApplication",
+      "applicationSubCategory": "RFQ Trading Desk",
+      "operatingSystem": "Web",
+      "url": "https://app.helvex.cc",
+      "downloadUrl": "https://app.helvex.cc",
+      "installUrl": "https://app.helvex.cc",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "0 bps Helvex app fee today; Canton network traffic may apply."
+      },
+      "description": "Web trading desk for permissioned RFQ swaps on Canton Network. KYC-verified users trade CC, CBTC, and USDCx using a Loop wallet for deposit/withdraw and a Helvex trading ID for lock, fill, and atomic settlement.",
+      "featureList": [
+        "Private RFQ swaps on Canton Network",
+        "Firm executable quotes",
+        "Atomic DvP settlement",
+        "KYC-verified counterparties",
+        "CC, CBTC, and USDCx markets",
+        "Loop wallet deposit and withdraw",
+        "HMAC trading API"
+      ],
+      "screenshot": "https://helvex.cc/assets/og-image.png",
+      "publisher": { "@id": "https://helvex.cc/#organization" },
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://helvex.cc/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is an RFQ on Helvex?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A request for quote is a posted trade: you state what you will sell and the minimum you will accept. Helvex locks the sell amount. Another verified account (the solver) fills it. There is no public order book."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Firm vs indicative — what's the difference?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Reference quotes in the app are indicative and refresh about every 30 seconds. Once an RFQ is locked and a solver fills at your minimum, settlement uses those firm terms — not a drifting pool price."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is there no slippage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You are not walking an order book. Fill and settlement honor the accepted RFQ amounts. App fee is 0 bps today; Canton network traffic still costs a small amount of CC."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Loop wallet vs trading ID?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Loop holds your keys for deposit and withdraw. Your Helvex trading ID is the Canton party that posts, locks, fills, and settles. Connect Loop on the same network as the Helvex app you use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who sees my RFQ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Locked RFQs are visible to counterparties on the Helvex desk so they can fill. There is no public mempool broadcast of your intent the way there is on many public chains."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is KYC required?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Helvex is a permissioned desk. Verification (government ID and live selfie) is required before activate, deposit, trade, or withdraw. Access also follows geo and sanctions controls."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I trade from an API?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. After you activate and fund in the app, mint an HMAC API key for maker or solver automation. Deposit, withdraw, and activate stay in the website session."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 <style>
 /* ============ Helvex tokens ============ */
 :root{
@@ -335,6 +553,14 @@ footer{border-top:1px solid var(--border-subtle);padding:32px 0;background:var(-
 .foot-links a:hover{color:var(--text-primary)}
 .foot-links .social-x{width:28px;height:28px}
 
+.skip-link{
+  position:absolute;left:12px;top:-48px;z-index:100;
+  background:var(--accent);color:var(--text-on-accent);
+  padding:10px 16px;border-radius:var(--radius-sm);font-weight:600;font-size:.875rem;
+  transition:top .15s var(--ease);
+}
+.skip-link:focus{top:12px}
+
 @keyframes quote-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @keyframes drain{from{transform:scaleX(1)}to{transform:scaleX(0)}}
 .draining{animation:drain 8s linear forwards}
@@ -364,8 +590,9 @@ footer{border-top:1px solid var(--border-subtle);padding:32px 0;background:var(-
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<nav>
+<nav aria-label="Primary">
   <div class="nav-inner">
     <a href="/" class="logo" aria-label="Helvex">
       <img class="for-dark" src="assets/lockup-dark.svg" alt="Helvex" height="28" width="117">
@@ -391,12 +618,12 @@ footer{border-top:1px solid var(--border-subtle);padding:32px 0;background:var(-
   </div>
 </nav>
 
-<header class="hero">
+<header class="hero" id="main">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Live on Canton Network</span>
+      <span class="eyebrow">Live on Canton MainNet</span>
       <h1>The quote comes <em>to you.</em></h1>
-      <p class="hero-sub">A permissioned RFQ desk for CC, CBTC, and USDCx. Post what you want to sell, get firm fills from verified counterparties, settle atomically. No public book. No mempool. No MEV.</p>
+      <p class="hero-sub"><strong>Helvex</strong> is the permissioned RFQ desk on <strong>Canton Network</strong> — a Dream Capital product. KYC-verified traders swap <strong>CC, CBTC, and USDCx</strong> using Loop for deposit/withdraw and a Helvex trading ID for lock, fill, and atomic settlement. No public book. No mempool. No MEV.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary btn-lg" href="https://app.helvex.cc" target="_blank" rel="noopener noreferrer">Open app</a>
         <a class="btn btn-secondary btn-lg" href="https://helvex.gitbook.io/helvex-docs" target="_blank" rel="noopener noreferrer">Read docs</a>
@@ -855,7 +1082,7 @@ footer{border-top:1px solid var(--border-subtle);padding:32px 0;background:var(-
   </div>
 </div>
 
-<footer>
+<footer role="contentinfo">
   <div class="foot-inner">
     <a href="/" class="logo logo-sm" aria-label="Helvex">
       <img class="for-dark" src="assets/lockup-dark.svg" alt="Helvex" height="22" width="92">

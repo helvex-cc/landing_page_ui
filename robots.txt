@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Canonical marketing host: https://helvex.cc
+# App / KYC / API hosts are separate and intentionally not listed here.
+Sitemap: https://helvex.cc/sitemap.xml
